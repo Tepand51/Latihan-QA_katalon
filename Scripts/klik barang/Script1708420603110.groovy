@@ -29,7 +29,9 @@ WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_u
 WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_password'),password)
 WebUI.click(findTestObject('Object Repository/Page_Swag Labs/input_Epic sadface Username is required_login-button'))
 // klik salah satu barang
+WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/div_Sauce Labs Backpack'), 2, FailureHandling.OPTIONAL)
 WebUI.click(findTestObject('Object Repository/Page_Swag Labs/div_Sauce Labs Backpack'))
+
 
 
 

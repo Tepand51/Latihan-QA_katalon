@@ -44,6 +44,7 @@ WebUI.setText(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Ch
 WebUI.setText(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Checkout Your Information_lastName'),'Asmoro')
 WebUI.setText(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Checkout Your Information_postalCode'),'17530')
 
+WebUI.verifyElementPresent(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Cancel_continue'), 2, FailureHandling.OPTIONAL)
 WebUI.click(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Cancel_continue'))
 
 

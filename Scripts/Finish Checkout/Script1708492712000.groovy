@@ -47,6 +47,7 @@ WebUI.setText(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Ch
 WebUI.click(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Cancel_continue'))
 
 // Finish Checkout
+WebUI.verifyElementPresent(findTestObject('Object Repository/cek/Page_Swag Labs/button_Finish'), 2, FailureHandling.OPTIONAL)
 
 WebUI.click(findTestObject('Object Repository/cek/Page_Swag Labs/button_Finish'))
 

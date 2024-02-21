@@ -36,6 +36,8 @@ WebUI.click(findTestObject('Object Repository/Page_Swag Labs/div_Sauce Labs Back
 //checkout
 WebUI.click(findTestObject('Object Repository/coba/Page_Swag Labs/button_Add to cart'))
 WebUI.click(findTestObject('Object Repository/coba/Page_Swag Labs/a_1'))
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/checkout/Page_Swag Labs/button_Checkout'), 2, FailureHandling.OPTIONAL)
 WebUI.click(findTestObject('Object Repository/checkout/Page_Swag Labs/button_Checkout'))
 
 
