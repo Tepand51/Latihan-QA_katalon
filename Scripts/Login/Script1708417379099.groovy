@@ -18,13 +18,13 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 // memanggil database dan membuat variabel
-def data = findTestData('Data Files/Users')
+//def data = findTestData('Data Files/Users')
 
-def username = data.getObjectValue('Username', 1)
+//def username = data.getObjectValue('Username', 1)
 
-def password = data.getObjectValue('Password', 1)
+//def password = data.getObjectValue('Password', 1)
 
-WebUI.comment(username)
+//WebUI.comment(username)
 
 // Proses untuk merunning hasil test cases
 WebUI.openBrowser('')
