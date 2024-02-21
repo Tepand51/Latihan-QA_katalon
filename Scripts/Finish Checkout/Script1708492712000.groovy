@@ -17,34 +17,14 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-// memanggil database dan membuat variabel
-def data = findTestData('Data Files/Users')
-def username = data.getObjectValue('Username',1)
-def password = data.getObjectValue('Password',1)
-WebUI.comment(username)
-// Proses untuk merunning hasil test cases
-WebUI.openBrowser('')
-
-WebUI.navigateToUrl('https://www.saucedemo.com/')
-WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_user-name'),username)
-WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_password'),password)
-WebUI.click(findTestObject('Object Repository/Page_Swag Labs/input_Epic sadface Username is required_login-button'))
-// klik salah satu barang
-WebUI.click(findTestObject('Object Repository/Page_Swag Labs/div_Sauce Labs Backpack'))
-
-
-//checkout
-WebUI.click(findTestObject('Object Repository/coba/Page_Swag Labs/button_Add to cart'))
-WebUI.click(findTestObject('Object Repository/coba/Page_Swag Labs/a_1'))
-WebUI.click(findTestObject('Object Repository/checkout/Page_Swag Labs/button_Checkout'))
-
-// Isi data Informasi
-
-WebUI.setText(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Checkout Your Information_firstName'),'Tegar Pandji')
-WebUI.setText(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Checkout Your Information_lastName'),'Asmoro')
-WebUI.setText(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Checkout Your Information_postalCode'),'17530')
-
-WebUI.click(findTestObject('Object Repository/checkout/Page_Swag Labs/input_Cancel_continue'))
+// Test case login
+WebUI.callTestCase(findTestCase('Login'), [:], FailureHandling.STOP_ON_FAILURE)
+// Test case klik barang
+WebUI.callTestCase(findTestCase('klik barang'), [:], FailureHandling.STOP_ON_FAILURE)
+// Test Case checkout
+WebUI.callTestCase(findTestCase('checkout'), [:], FailureHandling.STOP_ON_FAILURE)
+//Test Case Isi data info
+WebUI.callTestCase(findTestCase('Isi Data Informasi'), [:], FailureHandling.STOP_ON_FAILURE)
 
 // Finish Checkout
 WebUI.verifyElementPresent(findTestObject('Object Repository/cek/Page_Swag Labs/button_Finish'), 2, FailureHandling.OPTIONAL)

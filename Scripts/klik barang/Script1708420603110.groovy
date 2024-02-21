@@ -16,18 +16,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-// memanggil database dan membuat variabel
-def data = findTestData('Data Files/Users')
-def username = data.getObjectValue('Username',1)
-def password = data.getObjectValue('Password',1)
-WebUI.comment(username)
-// Proses untuk merunning hasil test cases
-WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://www.saucedemo.com/')
-WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_user-name'),username)
-WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_password'),password)
-WebUI.click(findTestObject('Object Repository/Page_Swag Labs/input_Epic sadface Username is required_login-button'))
+
 // klik salah satu barang
 WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/div_Sauce Labs Backpack'), 2, FailureHandling.OPTIONAL)
 WebUI.click(findTestObject('Object Repository/Page_Swag Labs/div_Sauce Labs Backpack'))
